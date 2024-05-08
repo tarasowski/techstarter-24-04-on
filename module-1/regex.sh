@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Metadaten für den script 👇
+# Author: <NAME>
+# Version: 1.0 (semver)
+# Date: 2020-07-12
+
 # Beispieltext
 text="apple banana cat dog elephant"
 
