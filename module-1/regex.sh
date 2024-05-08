@@ -15,7 +15,6 @@ echo "Suche nach Metazeichen '.' (Punkt):"
 echo $text
 echo "$text" | grep -Eo "."
 echo "--------------------------"
-# --> use exit 1 to exit the script immediately
 
 # Punkt: Einzelnes beliebiges Zeichen
 echo "Suche nach Metazeichen '.' (Punkt) in Kombination mit einem Buchstaben:"
@@ -25,6 +24,7 @@ echo $text
 echo "$text" | grep -Eo "a."
 echo "--------------------------"
 
+
 # Stern: Null oder mehr Vorkommen des vorhergehenden Elements
 echo "Suche nach Metazeichen '*' (Stern):"
 # Das Metazeichen '*' steht für null oder mehr Vorkommen des vorhergehenden Elements.
@@ -32,6 +32,15 @@ echo "Suche nach Metazeichen '*' (Stern):"
 echo $text
 echo "$text" | grep -Eo "a*"
 echo "--------------------------"
+
+# Suche nach Metazeichen '*' (Stern):
+# Das Metazeichen '*' steht für null oder mehr Vorkommen des vorhergehenden Elements.
+# Hier wird nach null oder mehr 'b' im Text gesucht.
+echo "Suche nach null oder mehr Vorkommen von 'b':"
+echo $text
+echo "$text" | grep -Eo "b*"
+echo "--------------------------"
+
 
 # Plus: Ein oder mehr Vorkommen des vorhergehenden Elements
 echo "Suche nach Metazeichen '+' (Plus):"
@@ -41,6 +50,7 @@ echo $text
 echo "$text" | grep -Eo "a+"
 echo "--------------------------"
 
+
 # Fragezeichen: Null oder ein Vorkommen des vorhergehenden Elements
 echo "Suche nach Metazeichen '?' (Fragezeichen):"
 # Das Metazeichen '?' steht für null oder ein Vorkommen des vorhergehenden Elements.
@@ -48,6 +58,7 @@ echo "Suche nach Metazeichen '?' (Fragezeichen):"
 echo $text
 echo "$text" | grep -Eo "d?"
 echo "--------------------------"
+
 
 # Hut: Anfang einer Zeile oder Zeichenfolge
 echo "Suche nach Metazeichen '^' (Hut):"
@@ -57,13 +68,25 @@ echo $text
 echo "$text" | grep -Eo "^a.*"
 echo "--------------------------"
 
+# Hut: Anfang einer Zeile oder Zeichenfolge
+echo "Suche nach Metazeichen '^' (Hut):"
+# Das Metazeichen '^' steht für den Anfang einer Zeile oder Zeichenfolge.
+# Hier wird nach Zeilen, die mit 'a' beginnen, gesucht.
+echo $text
+echo "$text" | grep -Eo "^b.*"
+echo "Das wird nicht funktiionieren, da es kein 'b' gibt."
+echo "--------------------------"
+
+
 # Dollarzeichen: Ende einer Zeile oder Zeichenfolge
 echo "Suche nach Metazeichen '$' (Dollarzeichen):"
 # Das Metazeichen '$' steht für das Ende einer Zeile oder Zeichenfolge.
 # Hier wird nach Zeilen, die mit 't' enden, gesucht.
 echo $text
 echo "$text" | grep -Eo "t$"
+# Hier wird nach Zeilen, die mit 'd' enden, gesucht.
 echo "--------------------------"
+
 
 # Eckige Klammern: Definiert eine Zeichenklasse
 echo "Suche nach Metazeichen '[]' (Eckige Klammern):"
@@ -73,6 +96,7 @@ echo $text
 echo "$text" | grep -Eo "[ae]"
 echo "--------------------------"
 
+
 # Senkrechter Strich: Logisches ODER
 echo "Suche nach Metazeichen '|' (Senkrechter Strich):"
 # Das Metazeichen '|' steht für logisches ODER zwischen zwei Mustern.
@@ -80,6 +104,7 @@ echo "Suche nach Metazeichen '|' (Senkrechter Strich):"
 echo $text
 echo "$text" | grep -Eo "ba|do"
 echo "--------------------------"
+
 
 # Klammern: Definiert eine Gruppe von Zeichen
 echo "Suche nach Metazeichen '()' (Klammern):"
@@ -97,3 +122,10 @@ echo $text
 echo "$text" | grep -Eo "\."
 echo "--------------------------"
 
+# Suche nach einem Muster, das aus einem Wort besteht, gefolgt von einem Komma und einem Leerzeichen, und dann einem anderen Wort.
+echo "Suche nach einem Muster, das aus einem Wort besteht, gefolgt von einem Komma und einem Leerzeichen, und dann einem anderen Wort:"
+echo $text
+echo "$text" | grep -Eo "\b\w+,\s\w+\b"
+echo "--------------------------"
+
+exit 0
