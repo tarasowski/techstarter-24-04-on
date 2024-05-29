@@ -54,26 +54,45 @@ Klasse C: Netzwerkmaske 255.255.255.0 (Netzwerk/Netzwerk/Netzwerk/Host)
 
 Also ist 255.255.255.0 in binär:
 11111111.11111111.11111111.00000000
+8+8+8 = 24 (netzwerk)
+8 bits die für den host stehen
 
 Bedeutung
 Jedes "11111111" repräsentiert ein Netzwerk-Bit, und jedes "00000000" repräsentiert ein Host-Bit. Da die Netzwerkmaske 255.255.255.0 lautet, bedeutet dies, dass die ersten drei Oktetten (24 Bits) den Netzwerkanteil und das letzte Oktett (8 Bits) den Hostanteil identifizieren.
 
+192.168.1.1/24
+192.168.1.1 - 192.168.1.49 - Range 1 (Marketing Subnetz) < 1 Machine mit IP 192.168.1.5
+192.168.1.50 - 192.168.1.99 - Range 2 (Vertrieb Subnetz) < 1 Maschine mit IP 192.168.1.51
 Angenommen, du hast eine Netzwerkmaske von 255.255.255.0 (/24), was bedeutet, dass die ersten 24 Bits den Netzwerkanteil identifizieren und die restlichen 8 Bits den Hostanteil.
 
 Die Schreibweise "/24" in Bezug auf eine Netzwerkmaske gibt an, wie viele Bits der Netzwerkanteil in der IPv4-Adresse umfasst. Es ist eine alternative und kompaktere Methode, die Länge der Netzwerkmaske anzugeben. Insgesamt gibt es 32 Bits in einer Adresse, also 8 Bits ist der Hostanteil.
 
 Die Netzwerkmaske 255.255.255.0 (/24) bedeutet, dass die ersten 24 Bits der IP-Adresse den Netzwerkanteil definieren und die restlichen 8 Bits den Hostanteil. Für das Subnetting bedeutet das, dass die IP-Adressen innerhalb dieses Subnets im Bereich von 192.168.1.0 bis 192.168.1.255 liegen.
 
+IP: 192.168.1.0
+Subnetmaske: 255.255.255.0 (/24) = 32 Bits - 24 = 2^8 = 256 verfügbaren IP-Addresses 
+Range: 192.168.1.0 - 192.168.1.255 < hier können wir Maschinen registrieren mit irgendeiner IP zwischen 0 und 255 (bei AWS sind 4 Ips immer reserviert für bestimmte Zwecke so haben wir nur noch 252 zur Verfügung) es können in diesem Netz nur 252 Machine mit eindeutiger IP registriert werden.
+
 Um das Netzwerk in Subnetze aufzuteilen, kannst du die Netzwerkmaske ändern und dadurch die Anzahl der verfügbaren Hostadressen pro Subnetz steuern.
 
 Angenommen, du möchtest das Netzwerk in vier gleich große Subnetze aufteilen. Du könntest die Netzwerkmaske ändern, um mehr Bits für den Netzwerkanteil zu verwenden. Eine Möglichkeit wäre die Verwendung einer Maske von 255.255.255.192 (/26), was bedeutet, dass die ersten 26 Bits den Netzwerkanteil identifizieren.
 
+255.255.255.192 <<< Subnetzmaske
+binary 👇
+11111111.11111111.11111111.11000000 (/26) 32 - 26 = 6 > 2^6 = 64 Adressen
+
 Mit dieser neuen Netzwerkmaske könntest du vier Subnetze erstellen, von denen jedes eine Größe von 64 Adressen hat (2^6 = 64). Die möglichen Subnetze wären:
 
-Subnetz 1: Netzwerkadresse von x.x.x.0 bis x.x.x.63
-Subnetz 2: Netzwerkadresse von x.x.x.64 bis x.x.x.127
-Subnetz 3: Netzwerkadresse von x.x.x.128 bis x.x.x.191
-Subnetz 4: Netzwerkadresse von x.x.x.192 bis x.x.x.255
+Subnetz 1: Netzwerkadresse von x.x.x.0 bis x.x.x.63 + 64 <<< 100 Machine
+Subnetz 2: Netzwerkadresse von x.x.x.64 bis x.x.x.127 + 64
+Subnetz 3: Netzwerkadresse von x.x.x.128 bis x.x.x.191 + 64
+Subnetz 4: Netzwerkadresse von x.x.x.192 bis x.x.x.255 + 64
+
+(/25) = 32 - 25 = 7 = 2^7 = als Range ??? 128
+Subnetz 1: Netzwerkadresse von x.x.x.0 bis x.x.x.127 <<< 100 Maschine würden hier reinpassen, weil wir 128 IPs haben
+....
+
+[CIDR Calculator](https://www.ipaddressguide.com/cidr)
 
 Durch Anpassen der Netzwerkmaske kannst du also die Größe und Anzahl der Subnetze in einem Netzwerk steuern, ohne die genauen IP-Adressen zu kennen. Dies ist besonders nützlich, wenn du die Netzwerkstruktur planst oder Änderungen vornehmen möchtest.
 
