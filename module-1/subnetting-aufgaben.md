@@ -1,4 +1,4 @@
-Aufgabe: Subnetting nach Abteilungen
+Aufgabe #1: Subnetting nach Abteilungen
 
 Sie sind der Netzwerkadministrator eines mittelgroßen Unternehmens, das vier Abteilungen umfasst: Verwaltung, Vertrieb, Technik und HR. Sie haben vom ISP das Netzwerk 192.168.1.0/24 zugewiesen bekommen und sollen nun dieses Netzwerk in Subnetze unterteilen, um jede Abteilung mit einem eigenen Subnetz zu versorgen. Jede Abteilung hat unterschiedliche Anforderungen an die Anzahl der IP-Adressen:
 
@@ -14,3 +14,30 @@ Bestimmen Sie die Anzahl der benötigten Subnetz-Bits für jedes Subnetz, um die
 Berechnen Sie die Subnetzmaske für jedes Subnetz.
 Weisen Sie jedem Subnetz eine Netzadresse zu.
 Bestimmen Sie die Broadcast-Adresse und den gültigen IP-Adressbereich für jedes Subnetz.
+
+Erwartete Ergebnisse:
+
+Verwaltung:
+
+Netzadresse:
+Subnetzmaske:
+Broadcast-Adresse:
+Gültiger IP-Adressbereich:
+Vertrieb:
+
+Netzadresse:
+Subnetzmaske:
+Broadcast-Adresse:
+Gültiger IP-Adressbereich:
+Technik:
+
+Netzadresse:
+Subnetzmaske:
+Broadcast-Adresse:
+Gültiger IP-Adressbereich:
+HR:
+
+Netzadresse:
+Subnetzmaske:
+Broadcast-Adresse:
+Gültiger IP-Adressbereich:
