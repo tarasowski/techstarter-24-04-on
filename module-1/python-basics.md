@@ -1,5 +1,14 @@
 Hier sind einige lustige Python-Aufgaben für Anfänger, um den Umgang mit Zahlen- und String-Typen zu üben und besser zu verstehen, wofür sie gebraucht werden:
 
+```py
+x = input("Gebe ein Zahl ein: ")
+y = input("Gebe eine zweite Zahl ein: ")
+
+sum = int(x) + int(y)
+
+print(sum)
+```
+
 ### Aufgabe 1: Der Zauberwürfel-Name
 Schreibe ein Programm, das den Benutzer nach seinem Vor- und Nachnamen fragt und dann eine magische Transformation auf den Namen durchführt:
 - Der Vorname soll in Großbuchstaben umgewandelt werden.
