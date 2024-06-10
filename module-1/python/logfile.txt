@@ -1,0 +1,16 @@
+2024-06-10 10:00:00 INFO Starting the server...
+2024-06-10 10:00:01 INFO Server started successfully.
+2024-06-10 10:05:23 WARNING Low disk space.
+2024-06-10 10:10:47 ERROR Unable to connect to database.
+2024-06-10 10:12:30 INFO Reconnecting to database.
+2024-06-10 10:12:31 INFO Reconnected to database.
+2024-06-10 10:15:00 INFO Performing scheduled backup.
+2024-06-10 10:15:45 ERROR Backup failed due to insufficient disk space.
+2024-06-10 10:16:00 INFO Cleaning up old logs.
+2024-06-10 10:16:30 INFO Old logs cleaned up.
+2024-06-10 10:20:00 INFO Server is running normally.
+2024-06-10 10:25:00 WARNING High memory usage detected.
+2024-06-10 10:30:00 ERROR Memory usage exceeds threshold.
+2024-06-10 10:35:00 INFO Initiating memory cleanup.
+2024-06-10 10:40:00 INFO Memory cleanup completed.
+2024-06-10 10:45:00 INFO Server is running normally.
