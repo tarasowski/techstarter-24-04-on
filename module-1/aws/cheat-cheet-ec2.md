@@ -42,21 +42,46 @@
 - Private IPs: Interne Kommunikation innerhalb eines Netzwerks.
 - Public IPs: Kommunikation über das Internet. Elastic IPs bieten statische IPs.
 
-#### Placement Groups
+#### Speicher
 
-1. **Cluster Placement Group:** Geringe Latenz, aber höheres Ausfallrisiko.
-2. **Spread Placement Group:** Hohe Verfügbarkeit durch Verteilung auf unterschiedliche Hardware.
-3. **Partition Placement Group:** Für verteilte Anwendungen wie Hadoop, Cassandra.
+- **Amazon EBS (Elastic Block Store):** Persistenter Blockspeicher für EC2 Instanzen, verschiedene Typen (z.B. SSD, HDD) für unterschiedliche Workloads.
+- **Instance Store (Ephemeral Storage):** Temporärer Speicher direkt auf der EC2 Instanz. Verloren bei Instanzstopp oder -ausfall.
 
-#### Elastic Network Interface (ENI)
+#### IAM (Identity and Access Management)
 
-- Virtuelle Netzwerkkarte in einem VPC, ermöglicht Konnektivität zwischen Instanzen und AWS Services.
+- **IAM-Rollen:** Berechtigungen für EC2 Instanzen, um sicher auf andere AWS Services zuzugreifen.
+- **IAM-Benutzer und Gruppen:** Verwaltung von Benutzern und Gruppen für Zugriffskontrolle und Berechtigungen.
+- **IAM-Policies:** Definieren, welche Aktionen auf welche Ressourcen erlaubt sind.
 
-#### EC2 Hibernate
 
-- Speichert RAM-Zustand auf verschlüsseltem EBS, schnelles Starten der Instanzen.
-- Maximale Dauer: 60 Tage, alle Daten im RAM werden auf EBS gespeichert.
+#### Netzwerkeinstellungen
 
----
+- **VPC (Virtual Private Cloud):** Virtuelles Netzwerk in der AWS Cloud.
+- **Subnetze:** Teilung eines VPCs in logische Netzwerke innerhalb einer AWS Region.
+- **Internet Gateway:** Erlaubt Zugriff auf das Internet von innerhalb eines VPCs.
 
-Diese Cheat Sheet fasst die wichtigsten Punkte zu AWS EC2 zusammen, von Instanztypen und Kaufoptionen bis hin zu Sicherheitsgruppen und Netzwerkkonzepten.
+#### Tags
+
+- Markierungen zur Organisation und Verwaltung von AWS Ressourcen, einschließlich EC2 Instanzen.
+
+#### Benutzerdaten
+
+- Skripte oder Befehle, die beim Starten einer EC2 Instanz automatisch ausgeführt werden.
+
+#### Sicherheitsgruppe
+
+- Virtuelle Firewalls für EC2 Instanzen, kontrollieren Ein- und Ausgangsverkehr.
+- Regeln spezifizieren erlaubten Traffic (z.B. SSH, RDP).
+
+#### Schlüsselpaar
+
+- SSH-Schlüsselpaar für sicheren Remote-Zugriff auf Linux-Instanzen über SSH.
+
+#### AMI (Amazon Machine Image)
+
+- Vorlagen zur Erstellung von EC2 Instanzen, inklusive Betriebssystem und Software.
+
+#### Instance starten
+
+- Prozess zum Starten einer EC2 Instanz aus einer AMI heraus.
+
