@@ -13,13 +13,6 @@ num2 = float(input("Bitte gebe die zweiten Zahl an: "))
 operation = input(
     "Bitte gebe die gewünschen Mathoperation an mit +, -, *, /, sqrt, **: ")
 
-erlaubt = ["+", "-", "*", "/", "sqrt", "**"]
-ergebnis = 0
-
-if operation not in erlaubt:
-    print("Das ist keine erlaubte Operation. Bitte gebe eine der folgenden Operationen an: +, -, *, /, sqrt, **: ")
-    exit()
-
 if operation == "+":
     ergebnis = (num1 + num2)  # wie kann ich das hier mit math machen???
 elif operation == "-":
