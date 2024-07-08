@@ -119,3 +119,6 @@ Hier sind 30 der wichtigsten AWS-Services, die für die AWS Cloud Practitioner Z
 30. **AWS CodeCommit**
     - **Beschreibung:** Quellcode-Repository-Service.
     - **Anwendung:** Verwaltung und Speicherung von Quellcode in Git-Repositories.
+
+**More resources:**
+- https://digitalcloud.training/category/aws-cheat-sheets/aws-cloud-practitioner/
