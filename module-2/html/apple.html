@@ -3,7 +3,6 @@
 
 <head>
     <title>My Apple Homepage</title>
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,9 +36,21 @@
             <img id="image-black" style="max-width: 500px; display: none;" src="./ipad_black.jpeg" />
         </div>
     </div>
+    <!--- hier wird document.write content einfügen-->
 </body>
 <script>
-    // programmatically change the image source
+    // my_name = input("Wie ist dein Name?")
+    // h2_name = "<h2>Dein Name ist: " + my_name + "</h2>
+
+    let myName = prompt("Wie ist dein Name?")
+    let h2Name = "<h2>Dein Name ist: " + myName + "</h2>"
+
+    // concatination
+    document.write(h2Name)
+
+
+    let greetings = "Hello from Techstarter. Mein Greeting ist: "
+    console.log(greetings)
     console.log("Hello from Techstarter nach dem Body!")
 
     // 👇 dieser part hier selektiert die buttons
