@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Apple Homepage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 16px;
+            padding: 0;
+        }
+
+        .buttons {
+            margin: 16px;
+        }
+
+        .buttons-outer {
+            padding: 16px;
+        }
+    </style>
+    <script>
+        console.log("Hello from Techstarter im Head")
+    </script>
+</head>
+
+<body>
+    <h1>Welcome to Apple Homepage</h1>
+    <div style="display: flex;">
+        <div class="buttons-outer" style="border: 1px solid red; width: 50%">
+            <h2>Choose your color</h2>
+            <button id="button-white">white</button>
+            <button id="button-black">black</button>
+        </div>
+        <div style="border: 1px solid blue;">
+            <img id="image-white" style="max-width: 500px; display: none;" src="./ipad_white.jpeg" />
+            <img id="image-black" style="max-width: 500px; display: none;" src="./ipad_black.jpeg" />
+        </div>
+    </div>
+</body>
+<script>
+    // programmatically change the image source
+    console.log("Hello from Techstarter nach dem Body!")
+
+    // 👇 dieser part hier selektiert die buttons
+    let buttonWhite = document.getElementById("button-white");
+    let buttonBlack = document.getElementById("button-black");
+    // 👆 werden die buttons selektiert
+
+    // 👇 hier werden die bilder selektiert
+    let imageWhite = document.getElementById("image-white")
+    let imageBlack = document.getElementById("image-black")
+    // 👆 bilder selektiert
+
+    // 👇 hier wird ein eventlistener auf die buttons gesetzt
+    buttonWhite.addEventListener("click", changeImageWhite)
+    buttonBlack.addEventListener("click", changeImageBlack)
+    // 👆 eventlistener auf die buttons gesetzt
+
+    function changeImageWhite() {
+        // hier können wir das bild mit der id "image-white" ändern
+        imageBlack.style.display = "none"
+        imageWhite.style.display = "block"
+        console.log("bitte das bild ändern: white", imageWhite)
+    }
+
+    function changeImageBlack() {
+        // hier können wir das bild mit der id "image-black" ändern
+        imageWhite.style.display = "none"
+        imageBlack.style.display = "block"
+        console.log("bitte das bild ändern: black", imageBlack)
+    }
+
+</script>
+
+</html>
