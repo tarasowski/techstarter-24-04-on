@@ -9,7 +9,7 @@
         body {
             height: 100vh;
             width: 100vw;
-            margin: 0;
+            margin: 0px;
             display: flex;
             flex-direction: column;
         }
@@ -33,11 +33,21 @@
             height: 20vh;
             background-color: #00acc1;
         }
+
+        .test-block {
+            border: 1px solid gray;
+            background-color: aqua;
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
     </style>
 </head>
 
-<body>
-    <h1>header</h1>
+<body> <!-- the starting point for the document-->
+    <header>
+        <h1>header</h1>
     </header>
     <nav>
         <h1>navigaiton</h1>
@@ -57,6 +67,10 @@
             Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
             versions
             of Lorem Ipsum</p>
+        <div class="test-block">
+            <p style="border: 1px solid blue; width: 48%; background-color: blue">Das ist mein erster Teil</p>
+            <p style="border: 1px solid red; width: 48%; background-color: red;">Das ist mein zweiter Teil</p>
+        </div>
     </main>
     <footer>
         <h1>footer<h1>
