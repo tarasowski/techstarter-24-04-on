@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Webpage</title>
+</head>
+
+<body>
+    <h1 id="headline" style="color: black;">Welcome to My Webpage</h1>
+
+    <button id="test">Hier klicken</button>
+    <!-- Your content goes here -->
+
+</body>
+<script>
+
+    let myButton = document.getElementById("test")
+
+    function myButtonClick() {
+        let h1 = document.getElementById("headline")
+        h1.style.color = "red"
+        console.log("das ist meine headline", h1)
+        console.log("das ist die farbe von meiner headline", h1.style.color)
+    }
+    myButton.addEventListener("click", myButtonClick)
+</script>
+
+</html>
