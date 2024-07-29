@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Webpage</title>
+</head>
+
+<body>
+    <!--- 👇 wenn ich rot klicke, ändert sich der preis-->
+    <!--- 👇 wenn ich blau klicke, ändert sich der preis-->
+    <!--- 👇 wenn ich grau klicke, ändert sich der preis-->
+    <h1 id="headline" style="color: black;">Das ist mein Defaultpreis: $1000</h1>
+
+    <button id="button-rot">Rot</button>
+    <button id="button-blau">Blau</button>
+    <button id="button-gruen">Grün</button>
+    <button id="button-schwarz">Schwarz</button>
+    <button id="button-weiss">Weiss</button>
+    <button id="button-grau">Grau</button>
+    <!-- Your content goes here -->
+
+</body>
+<script>
+
+    let myButtonRot = document.getElementById("button-rot")
+    let myButtonBlau = document.getElementById("button-blau")
+    let myButtonSchwarz = document.getElementById("button-schwarz")
+    let myButtonWeiss = document.getElementById("button-weiss")
+    let myButtonGrau = document.getElementById("button-grau")
+
+    myButtonRot.addEventListener("click", function changePrice() {
+        console.log("das sollte aufgerufen werden wenn auf button rot geclickt wird!!!")
+        let h1 = document.getElementById("headline")
+        h1.textContent = "Das ist der Preis für die Frabe rot: $5000"
+    })
+
+    function myButtonClick() {
+        let h1 = document.getElementById("headline")
+        h1.style.color = "red"
+        h1.textContent = "This is my new content. Welcome to Techstarter!!!"
+        console.log("das ist meine headline", h1)
+        console.log("das ist die farbe von meiner headline", h1.style.color)
+    }
+    myButton.addEventListener("click", myButtonClick)
+</script>
+
+</html>
