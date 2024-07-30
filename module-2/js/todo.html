@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <h1>Meine Todo App</h1>
+    <div>
+        <label htmlFor="todo" style="font-weight: bold;">Mein Todo:</label>
+        <br />
+
+        <!-- wenn ich etwas hier eingebe, möchte ich den Wert auslesen-->
+        <input id="todo-input" value="" name="todo" type="text" placeholder="Dein todo hier" />
+        <!-- 👆 aus dem input den Wert/die Werte auslesen -->
+
+        <!-- ich brauche einen Eventlistener für diesen Button hier -->
+        <button id="add-todo">Hinzufügen</button>
+        <!-- nur für den button-->
+
+    </div>
+    <div>
+        <ul id="todo-liste">
+            <!--
+            <li>name: Das ist mein Todo #1 - status: offen</li>
+            <li>name: Das ist mein Todo #2 - status: erledigt</li>
+            <li>name: Das ist mein Todo #3 - status: offen</li>
+            <li>name: Das ist mein Todo #4 - status: erledigt</li>
+            -->
+        </ul>
+    </div>
+    <div id="demo"></div>
+
+</body>
+<script>
+    let todoButton = document.getElementById("add-todo")
+    let inputField = document.getElementById("todo-input")
+    let todoListe = document.getElementById("todo-liste")
+
+
+
+    // das datenmodell wird oft als eine liste / array dargestellt
+    // hier haben wir dann sehr oft objekte innerhalb der liste
+    // objekte beinhlaten dann informationen zu den eizelnen werten <li>Todo</li>
+    let todos = [
+        /*
+        { name: "Das ist mein Todo #1", status: "offen" },
+        { name: "Das ist mein Todo #2", status: "erledigt" },
+        { name: "Das ist mein Todo #3", status: "offen" },
+        { name: "Das ist mein Todo #4", status: "erledig" },
+        { name: "Das ist mein Todo #5", status: "offen" },
+         */
+    ]
+
+    // programatically von js in html umgewandelt
+    function repaint() {
+        // hier beim ersten schritt werden die elemente die sich in der todoListe befinden
+        // die element werden durch .innerHTML = "" gelöscht
+        todoListe.innerHTML = ""
+        // das fügt die li's an die ul an, bei jedem durchlauf
+        todos.forEach(todo => {
+            let li = document.createElement("li") // <-- <li>Das ist mein Todo#1offen</li>
+            li.innerText = todo.name + todo.status
+            todoListe.appendChild(li)
+        })
+    }
+
+
+    function handleButtonClick() {
+        // hier unser input ausgelesen
+        let inputValue = inputField.value
+
+        // hier wird unser input in die todos array hinzugefügt
+        todos.push({ name: inputValue, status: "offen" })
+
+        // hier wird das ganze dann auf dem bildschirm rerendered also es
+        // wird <li> erstellt und angezeigt
+        repaint()
+    }
+
+    todoButton.addEventListener("click", handleButtonClick)
+
+    /*
+    let demoText = document.createElement("p")
+    demoText.textContent = "Das ist mein Demo Text innerhalb von p Tag"
+    let demoDiv = document.getElementById("demo")
+    demoDiv.appendChild(demoText)
+    */
+
+</script>
+
+</html>
