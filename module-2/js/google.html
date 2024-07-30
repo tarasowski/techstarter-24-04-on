@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Suche</title>
+</head>
+
+<body style="text-align: center">
+    <img src="google.jpg" />
+    <div style="background-color: #EEEEEE; padding: 1rem;">
+        <input id="google-suchfeld" style="width: 300px" value="" type="text" placeholder="Gebe ein Suchbegriff ein" />
+        <button id="button-suche">Suchen</button>
+    </div>
+    <div style="text-align: left;">
+        <ul id="search-results-block"
+            style="color: blue; list-style-type: none; display: flex; flex-direction: column; gap: 1rem">
+        </ul>
+    </div>
+
+</body>
+<script>
+    let inputField = document.getElementById("google-suchfeld")
+    let searchButton = document.getElementById("button-suche")
+    let searchResultsBlock = document.getElementById("search-results-block")
+
+
+
+    let searchResults = {
+        "berlin": [
+            { title: "Einwohner Berlin - Website", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", url: "www.berlininfo.com" },
+            { title: "Berlin Travel Guide", description: "Discover the best places to visit in Berlin.", url: "www.berlintravel.com" },
+            { title: "Berlin History", description: "Learn about the rich history of Berlin.", url: "www.berlinhistory.com" }
+        ],
+        "paris": [
+            { title: "Paris Travel Guide", description: "Explore the city of lights with our travel guide.", url: "www.paristravel.com" },
+            { title: "Eiffel Tower Facts", description: "Interesting facts about the Eiffel Tower.", url: "www.eiffeltowerfacts.com" },
+            { title: "Paris Museums", description: "A guide to the best museums in Paris.", url: "www.parismuseums.com" }
+        ],
+        "ny": [
+            { title: "New York City Guide", description: "Your ultimate guide to New York City.", url: "www.nycguide.com" },
+            { title: "Statue of Liberty", description: "Learn about the history of the Statue of Liberty.", url: "www.statueofliberty.com" },
+            { title: "Broadway Shows", description: "Find the best Broadway shows in New York.", url: "www.broadwayshows.com" }
+        ]
+    }
+
+    function handlerStartSearch() {
+        let inputValue = inputField.value
+        if (inputValue === "berlin") {
+            let results = searchResults.berlin // [{}, {}, {}]
+
+            let result1 = results[0]
+            let result2 = results[1]
+            let result3 = results[2]
+
+            searchResultsBlock.innerHTML = `
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result1.title}</span>
+                    <span style="color: black;">${result1.description}</span>
+                    <span style="color: green; display: block;">${result1.url}</span>
+                </li>
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result2.title}</span>
+                    <span style="color: black;">${result2.description}</span>
+                    <span style="color: green; display: block;">${result2.url}</span>
+                </li>
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result3.title}</span>
+                    <span style="color: black;">${result3.description}</span>
+                    <span style="color: green; display: block;">${result3.url}</span>
+                </li>
+            `
+
+        }
+        if (inputValue === "paris") {
+            let results = searchResults.paris
+
+            let result1 = results[0]
+            let result2 = results[1]
+            let result3 = results[2]
+
+            searchResultsBlock.innerHTML = `
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result1.title}</span>
+                    <span style="color: black;">${result1.description}</span>
+                    <span style="color: green; display: block;">${result1.url}</span>
+                </li>
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result2.title}</span>
+                    <span style="color: black;">${result2.description}</span>
+                    <span style="color: green; display: block;">${result2.url}</span>
+                </li>
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result3.title}</span>
+                    <span style="color: black;">${result3.description}</span>
+                    <span style="color: green; display: block;">${result3.url}</span>
+                </li>
+            `
+        }
+        if (inputValue === "ny") {
+            let results = searchResults.ny
+
+            let result1 = results[0]
+            let result2 = results[1]
+            let result3 = results[2]
+
+            searchResultsBlock.innerHTML = `
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result1.title}</span>
+                    <span style="color: black;">${result1.description}</span>
+                    <span style="color: green; display: block;">${result1.url}</span>
+                </li>
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result2.title}</span>
+                    <span style="color: black;">${result2.description}</span>
+                    <span style="color: green; display: block;">${result2.url}</span>
+                </li>
+                <li style="display: flex; gap: 4px; flex-direction: column;">
+                    <span style="display: block;">${result3.title}</span>
+                    <span style="color: black;">${result3.description}</span>
+                    <span style="color: green; display: block;">${result3.url}</span>
+                </li>
+            `
+        }
+    }
+
+    searchButton.addEventListener("click", handlerStartSearch)
+
+</script>
+
+</html>
