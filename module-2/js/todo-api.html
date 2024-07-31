@@ -1,0 +1,45 @@
+<body>
+    <h1>Meine Todo Fake app</h1>
+    <input id="todo-input" value="" type="text" placeholder="Deine todo hier" />
+    <button id="senden-button">Jetzt senden</button>
+    <div id="todo-list"></div> <!-- Container for displaying todos -->
+
+</body>
+<script>
+    let sendenButton = document.getElementById("senden-button")
+    let todoInput = document.getElementById("todo-input")
+    let todoList = document.getElementById("todo-list")
+
+    async function success(res) {
+        const antwort = await res.json()
+        const todoItem = document.createElement("div")
+        todoItem.textContent = `ID: ${antwort.id}, Title: ${antwort.title}`
+        todoList.appendChild(todoItem)
+    }
+
+    async function error(err) {
+        console.log(err)
+    }
+
+    async function createTodo() {
+        // ziehen wir uns die eingabe beim input field
+        // 👇
+        const inputValue = todoInput.value
+
+        await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                title: inputValue,
+                body: 'This is a fake todo item',
+                userId: 1
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then(success)
+            .catch(error)
+    }
+
+    sendenButton.addEventListener("click", createTodo)
+</script>
